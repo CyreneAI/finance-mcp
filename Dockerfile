@@ -1,10 +1,11 @@
 # mcp-servers/finance-mcp/Dockerfile
-FROM base-mcp:latest
+FROM ghcr.io/cyreneai/base-mcp:latest
 
+# Set the working directory
 WORKDIR /app
 
-# Copy the MCP server file
-COPY mcp-servers/finance-mcp/server.py /app/mcp-servers/finance-mcp/server.py
+# Copy your service code
+COPY server.py .
 
 # Set environment variables for Kubernetes deployment
 ENV LOCAL_MODE="false"
